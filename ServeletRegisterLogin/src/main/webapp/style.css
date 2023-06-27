@@ -25,3 +25,11 @@ float: right;
 position:relative!important;
 top:40px;
 }
+.cardss{
+	display: flex;
+justify-content: center;
+align-items: center;
+}
+.rd{
+	color:white;
+}
