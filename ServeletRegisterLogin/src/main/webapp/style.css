@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+.hey{
+	padding-left: 775px !important;
+}
+.Background{
+	background: rgb(34,52,119);
+background: linear-gradient(180deg, rgba(34,52,119,1), rgba(108,126,208,1) 100);
+}
+.card{
+	background: rgb(34,52,119);
+background: linear-gradient(180deg, rgba(34,52,119,1) 27%, rgba(108,126,208,1) 89%);
+}
+.r{
+	color:#00ffde
+}
+button{
+background:aqua!important;
+}
+label{
+	color:white
+}
+img {
+
+float: right;
+position:relative!important;
+top:40px;
+}
