@@ -1,4 +1,4 @@
-package register;
+package update;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,38 +11,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/save")
-public class Registeration extends HttpServlet {
+/**
+ * Servlet implementation class Update
+ */
+@WebServlet("/update")
+public class Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Registeration() {
+    public Update() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Username= request.getParameter("name");
-		String number= request.getParameter("number");
+
 		String email= request.getParameter("email");
-		String password= request.getParameter("password");
-	System.out.println(Username);
-	System.out.println(number);
-	System.out.println(email);
-	System.out.println(password);
+	
+
+		System.out.println(Username);
+
+		System.out.println(email);
+
 	
 	
 
@@ -53,8 +50,8 @@ public class Registeration extends HttpServlet {
 		
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Naruto","root","root");
 		Statement stmnt=con.createStatement();
-		stmnt.execute("insert into Users value('"+Username+"','"+number+"','"+email+"','"+password+"')"); 
-		System.out.println("data inserted");
+		stmnt.executeUpdate("UPDATE Users SET username='"+Username+"' WHERE email='"+email+"'");
+		System.out.println("data Updated");
 				
 		
 				
