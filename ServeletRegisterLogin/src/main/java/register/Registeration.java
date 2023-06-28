@@ -1,6 +1,7 @@
 package register;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -55,13 +56,18 @@ public class Registeration extends HttpServlet {
 		Statement stmnt=con.createStatement();
 		stmnt.execute("insert into Users value('"+Username+"','"+number+"','"+email+"','"+password+"')"); 
 		System.out.println("data inserted");
-				
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		 out.println("<meta http-equiv='refresh' content='3;URL=login.html'>");//redirects after 3 seconds
+		   out.println("<p style='color:red;'>Registered Sucessfully!</p>");
+		
+		
 		
 				
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-		doGet(request, response);
+		
 	}
 
 }

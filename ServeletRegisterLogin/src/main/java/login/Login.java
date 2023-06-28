@@ -55,6 +55,7 @@ public class Login extends HttpServlet {
 			System.out.println(result.next());
 			if(result.next()){
 				System.out.println("bhaukal");
+				response.sendRedirect("Display.java");
 				
 			}else {
 				System.out.println("aree bhaii galat");

@@ -16,7 +16,7 @@ background: linear-gradient(180deg, rgba(34,52,119,1) 27%, rgba(108,126,208,1) 8
 button{
 background:aqua!important;
 }
-label{
+.label{
 	color:white
 }
 img {
@@ -32,4 +32,7 @@ align-items: center;
 }
 .rd{
 	color:white;
+}
+a{
+	display:none
 }
